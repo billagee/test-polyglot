@@ -3,6 +3,8 @@ Source files for common test automation tasks, implemented using different combi
 
 Or: An adventure in TMTOWTDI.
 
+Written by Bill Agee ( http://www.likewise.org )
+
 ## Organization
 Files in this repository are organized as follows:
 
