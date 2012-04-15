@@ -1,8 +1,10 @@
 # test-polyglot 
-Common test automation tasks, shown in different languages and libraries.
+Source files for common test automation tasks, implemented using different combinations of APIs, languages, and (where useful) third-party libraries.
+
+Or: An adventure in TMTOWTDI.
 
 ## Organization
-Files in the project are organized as follows:
+Files in this repository are organized as follows:
 
 ````
 program name/
@@ -25,6 +27,7 @@ isVistaOrNewer
   windows-api/
     cpp/
       isVistaOrNewer.cpp
+  dotnet/
     csharp/
       isVistaOrNewer.cs
 
