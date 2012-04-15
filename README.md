@@ -5,11 +5,68 @@ Common test automation tasks, shown in different languages and libraries.
 Files in the project are organized as follows:
 
 ````
-  os/
-    framework/
-      language/
-        dependencies/
-          source file(s)
+program name/
+  api/
+    language/
+      dependencies (if needed)/
+        source file(s)
+````
+
+## Table of Contents
+
+
+````
+isVistaOrNewer
+
+  A program that tells you whether the OS is Vista or newer.
+
+  Code examples:
+
+  windows-api/
+    cpp/
+      isVistaOrNewer.cpp
+    csharp/
+      isVistaOrNewer.cs
+
+````
+
+TODO:
+
+````
+printDesktopUiaElementName
+
+  Uses the Microsoft UI Automation API (UIA) to get and print the name
+  of the root (desktop) UI automation element.
+
+  Code examples:
+
+  ms-ui-automation-com/
+    cpp/
+      printDesktopElementName.cpp
+    python/
+      comtypes/
+        print_desktop_element_name.py
+    ruby/
+      windows-pr/
+        print_desktop_element_name.rb
+  ms-ui-automation-net/
+    csharp/
+      printDesktopElementName.cs
+    ironruby/
+      bewildr/
+        print_desktop_element_name.rb
+````
+
+````
+printDesktopIAccessibleObjectName
+
+  Uses the Microsoft Active Accessibility API (MSAA) to get and print
+  the name of the desktop object's client element.  This element is the
+  parent of all top-level open windows.
+
+  ms-active-accessibility/
+    cpp/
+      printDesktopIAccessibleObjectName.cpp
 ````
 
 ## License
