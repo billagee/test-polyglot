@@ -54,7 +54,7 @@ printDesktopUiaElementName
     ruby/
       windows-pr/
         print_desktop_element_name.rb
-  ms-ui-automation-net/
+  ms-ui-automation-dotnet/
     csharp/
       printDesktopElementName.cs
     ironruby/
@@ -72,6 +72,12 @@ printDesktopIAccessibleObjectName
   ms-active-accessibility/
     cpp/
       printDesktopIAccessibleObjectName.cpp
+    ruby/
+      windows-pr/
+        print_desktop_iaccessible_object_name.rb
+    python/
+      comtypes/
+        print_desktop_iaccessible_object_name.py
 ````
 
 ## License
