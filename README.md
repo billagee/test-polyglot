@@ -8,7 +8,7 @@ Or: An adventure in TMTOWTDI.
 In this project, "polyglot" is used in the sense of a book
 containing the same text in several different languages.
 
-Written by Bill Agee ( http://www.likewise.org )
+By Bill Agee ( http://www.likewise.org )
 
 ## Organization
 Files in this repository are organized as follows:
@@ -17,7 +17,7 @@ Files in this repository are organized as follows:
 program name/
   api/
     language/
-      dependencies (if needed)/
+      third-party library (if used)/
         source file(s)
 ````
 
@@ -73,6 +73,8 @@ TODO:
     ironruby/
       bewildr/
         print_desktop_element_name.rb
+    powershell/
+      printDesktopElementName.ps1
 ````
 
 TODO:
