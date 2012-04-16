@@ -1,7 +1,12 @@
 # test-polyglot 
-Source files for common test automation tasks, implemented using different combinations of APIs, languages, and (where useful) third-party libraries.
+A collection of source files for programs that perform common
+test automation tasks, implemented using different languages,
+APIs, and (where appropriate) third-party libraries.
 
 Or: An adventure in TMTOWTDI.
+
+In this project, "polyglot" is used in the sense of a book
+containing the same text in several different languages.
 
 Written by Bill Agee ( http://www.likewise.org )
 
@@ -26,6 +31,7 @@ isVistaOrNewer
 
   Code examples:
 
+isVistaOrNewer/
   windows-api/
     cpp/
       isVistaOrNewer.cpp
@@ -38,8 +44,6 @@ isVistaOrNewer
 
 ````
 
-TODO:
-
 ````
 printDesktopUiaElementName
 
@@ -48,15 +52,21 @@ printDesktopUiaElementName
 
   Code examples:
 
-  ms-ui-automation-com/
+printDesktopUiaElementName/
+  ms-ui-automation-com-api/
+    ruby-mri/
+      windows-pr/
+        print_desktop_uia_element_name.rb
+
+TODO:
+
+  ms-ui-automation-com-api/
     cpp/
-      printDesktopElementName.cpp
+      printDesktopUiaElementName.cpp
     python/
       comtypes/
-        print_desktop_element_name.py
-    ruby/
-      windows-pr/
-        print_desktop_element_name.rb
+        print_desktop_uia_element_name.py
+
   ms-ui-automation-dotnet/
     csharp/
       printDesktopElementName.cs
@@ -64,6 +74,8 @@ printDesktopUiaElementName
       bewildr/
         print_desktop_element_name.rb
 ````
+
+TODO:
 
 ````
 printDesktopIAccessibleObjectName
@@ -75,7 +87,7 @@ printDesktopIAccessibleObjectName
   ms-active-accessibility/
     cpp/
       printDesktopIAccessibleObjectName.cpp
-    ruby/
+    ruby-mri/
       windows-pr/
         print_desktop_iaccessible_object_name.rb
     python/
@@ -93,3 +105,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
