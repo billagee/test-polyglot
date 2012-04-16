@@ -1,31 +1,29 @@
 =begin
+  print_desktop_uia_element_name.rb
 
-print_desktop_uia_element_name.rb
+  From https://github.com/billagee/test-polyglot
 
-From https://github.com/billagee/test-polyglot
+  This script shows how to use wprintf() and a few functions from the
+  MS UI Automation COM interface (IUIAutomation) to print the name
+  of the desktop's IUIAutomationElement on a Windows machine.
 
-This script shows how to use wprintf() and a few functions from the
-MS UI Automation COM interface (IUIAutomation) to print the name
-of the desktop's IUIAutomationElement on a Windows machine.
-For more information see the MS docs on:
+  For more information see the MS docs on:
 
-IUIAutomation::GetRootElement
-http://msdn.microsoft.com/en-us/library/windows/desktop/ee671544(v=vs.85).aspx
+  IUIAutomation::GetRootElement
+  http://msdn.microsoft.com/en-us/library/windows/desktop/ee671544(v=vs.85).aspx
 
-IUIAutomationElement::get_CurrentName
-http://msdn.microsoft.com/en-us/library/windows/desktop/ee696022(v=vs.85).aspx
+  IUIAutomationElement::get_CurrentName
+  http://msdn.microsoft.com/en-us/library/windows/desktop/ee696022(v=vs.85).aspx
 
+  Other good sources of information:
 
-Other good sources of information:
+  http://en.wikipedia.org/wiki/Microsoft_UI_Automation
 
-http://en.wikipedia.org/wiki/Microsoft_UI_Automation
+  The IUIAutomation docs:
+    http://msdn.microsoft.com/en-us/library/ms726294(VS.85).aspx
 
-The IUIAutomation docs:
-  http://msdn.microsoft.com/en-us/library/ms726294(VS.85).aspx
-
-Your local copy of UIAutomationClient.h, installed with the Windows SDK:
-  \Program Files\Microsoft SDKs\Windows\v7.1\Include\UIAutomationClient.h
-
+  Your local copy of UIAutomationClient.h, installed with the Windows SDK:
+    \Program Files\Microsoft SDKs\Windows\v7.1\Include\UIAutomationClient.h
 =end
 
 require 'rubygems'
@@ -77,7 +75,7 @@ hr = CoCreateInstance(
   IID_IUIAutomation,
   iuia_ptr
 )
-puts "HRESULT of CoCreateInstance is: " + hr.to_s
+#puts "HRESULT of CoCreateInstance is: " + hr.to_s
 
 # Get a pointer to the iuia_ptr, which we'll use for the IUIAutomation functions
 iuia_ptr_ptr = iuia_ptr.unpack('L').first
@@ -107,7 +105,7 @@ Memcpy.call(iuia_table, iuia_vtbl_ptr.unpack('L').first, 4 * 58)
 
 # Unpack the contents of the virtual function table into the 'iuia_table' array.
 iuia_table = iuia_table.unpack('L*')
-puts "Number of elements in the vtbl is: " + iuia_table.length.to_s
+puts "Number of elements in the IUIAutomationVtbl is: " + iuia_table.length.to_s
 
 # GetRootElement is the 6th function in the vtbl.  Both the 'This' pointer
 # and the out param must be specified as args, due to the C style interface:
@@ -116,7 +114,7 @@ GetRootElement = Win32::API::Function.new(iuia_table[5], 'PP', 'L')
 # Call GetRootElement to get a pointer to the desktop IUIAutomationElement
 desktop_ptr = 0.chr * 4
 hr = GetRootElement.call(iuia_ptr.unpack('L').first, desktop_ptr)
-puts "HRESULT of GetRootElement is: " + hr.to_s
+#puts "HRESULT of GetRootElement is: " + hr.to_s
 
 # To get the element's name, we need to call the get_CurrentName function.
 # The function can be accessed through the IUIAutomationElement vtbl - and we
@@ -132,7 +130,8 @@ Memcpy.call(element_vtbl_ptr, desktop_ptr.unpack('L').first, 4)
 # Unpack the contents of the virtual function table into the table array.
 Memcpy.call(element_table, element_vtbl_ptr.unpack('L').first, 4 * 85)
 element_table = element_table.unpack('L*')
-puts "Number of elements in the vtbl is: " + element_table.length.to_s
+puts "Number of elements in the IUIAutomationElementVtbl is: " +
+  element_table.length.to_s
 
 # IUIAutomationElement::get_CurrentName is the 24th function in the vtbl.
 Get_CurrentName = Win32::API::Function.new(element_table[23], 'PP', 'L')
@@ -140,12 +139,12 @@ Get_CurrentName = Win32::API::Function.new(element_table[23], 'PP', 'L')
 # Create buffer for the BSTR that will receive the name from Get_CurrentName()
 root_element_name = 0.chr * 4
 hr = Get_CurrentName.call(desktop_ptr.unpack('L').first, root_element_name)
-puts hr
-#puts get_last_error(hr)
+#puts "HRESULT of Get_CurrentName is: " + hr.to_s
 
 # Print the name of the root element
 Wprintf = Windows::API.new('wprintf', 'PP', 'I', 'msvcrt')
-format_str = "The string is: '%s'\n"
+format_str = "The name of the root automation element is: '%s'\n"
 Wprintf.call(get_wide_str_ptr(format_str), root_element_name.unpack('L').first)
 
 CoUninitialize()
+
