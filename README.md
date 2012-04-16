@@ -29,6 +29,9 @@ isVistaOrNewer
   windows-api/
     cpp/
       isVistaOrNewer.cpp
+    ruby-mri/
+      windows-pr/
+        is_vista_or_newer.rb
   dotnet/
     csharp/
       isVistaOrNewer.cs
