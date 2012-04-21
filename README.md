@@ -57,6 +57,9 @@ printDesktopUiaElementName/
     ruby-mri/
       windows-pr/
         print_desktop_uia_element_name.rb
+    csharp/
+      PrintDesktopUiaElementNameViaCom/
+        PrintDesktopUiaElementNameViaComProgram.cs
   ms-ui-automation-managed-api/
     csharp/
       printDesktopUiaElementName.cs
