@@ -8,7 +8,7 @@ Or: An adventure in TMTOWTDI.
 In this project, "polyglot" is used in the sense of a book
 containing the same text in several different languages.
 
-By Bill Agee ( http://www.likewise.org )
+- Bill Agee ( http://www.likewise.org )
 
 ## Organization
 Files in this repository are organized as follows:
@@ -57,6 +57,9 @@ printDesktopUiaElementName/
     ruby-mri/
       windows-pr/
         print_desktop_uia_element_name.rb
+  ms-ui-automation-managed-api/
+    csharp/
+      printDesktopUiaElementName.cs
 
 TODO:
 
@@ -67,14 +70,13 @@ TODO:
       comtypes/
         print_desktop_uia_element_name.py
 
-  ms-ui-automation-dotnet/
-    csharp/
-      printDesktopElementName.cs
+  ms-ui-automation-managed-api/
     ironruby/
       bewildr/
-        print_desktop_element_name.rb
+        print_desktop_uia_element_name.rb
     powershell/
-      printDesktopElementName.ps1
+      http://uiautomation.codeplex.com/
+        printDesktopUiaElementName.ps1
 ````
 
 TODO:
