@@ -60,6 +60,8 @@ printDesktopUiaElementName/
     csharp/
       PrintDesktopUiaElementNameViaCom/
         PrintDesktopUiaElementNameViaComProgram.cs
+    cpp/
+      PrintDesktopUiaElementName.cpp
   ms-ui-automation-managed-api/
     csharp/
       printDesktopUiaElementName.cs
@@ -67,8 +69,6 @@ printDesktopUiaElementName/
 TODO:
 
   ms-ui-automation-com-api/
-    cpp/
-      printDesktopUiaElementName.cpp
     python/
       comtypes/
         print_desktop_uia_element_name.py
