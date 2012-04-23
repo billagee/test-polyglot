@@ -68,6 +68,8 @@ printDesktopUiaElementName/
   ms-ui-automation-managed-api/
     csharp/
       printDesktopUiaElementName.cs
+    powershell/
+      printDesktopUiaElementName.ps1
 
 TODO:
 
@@ -75,9 +77,6 @@ TODO:
     ironruby/
       bewildr/
         print_desktop_uia_element_name.rb
-    powershell/
-      uiautomation.codeplex.com/
-        printDesktopUiaElementName.ps1
 ````
 
 TODO:
