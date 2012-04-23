@@ -15,7 +15,6 @@
 $rootElement = [Windows.Automation.AutomationElement]::RootElement
 # Print its Name and ClassName
 Write-Host "Note: In the managed UIA API, the desktop name is empty:"
-Write-Host $rootElement.Current.Name
 "'" + $rootElement.Current.Name + "'"
 Write-Host "Instead, you can identify the desktop by its ClassName, #32769:"
 "'" + $rootElement.Current.ClassName + "'"
