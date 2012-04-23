@@ -11,6 +11,9 @@
 # - Windows 7 32-bit
 # - PowerShell 2.0
 
+[Reflection.Assembly]::LoadFile('C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\UIAutomationClient.dll')
+[Reflection.Assembly]::LoadFile('C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\UIAutomationTypes.dll')
+
 # Get the root element
 $rootElement = [Windows.Automation.AutomationElement]::RootElement
 # Print its Name and ClassName
