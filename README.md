@@ -50,7 +50,7 @@ printDesktopUiaElementName
   Uses the Microsoft UI Automation API (UIA) to get and print the name
   of the root (desktop) UI automation element.
 
-  Code examples:
+Code examples:
 
 printDesktopUiaElementName/
   ms-ui-automation-com-api/
@@ -62,23 +62,21 @@ printDesktopUiaElementName/
         PrintDesktopUiaElementNameViaComProgram.cs
     cpp/
       PrintDesktopUiaElementName.cpp
+    python/
+      comtypes/
+        print_desktop_uia_element_name.py
   ms-ui-automation-managed-api/
     csharp/
       printDesktopUiaElementName.cs
 
 TODO:
 
-  ms-ui-automation-com-api/
-    python/
-      comtypes/
-        print_desktop_uia_element_name.py
-
   ms-ui-automation-managed-api/
     ironruby/
       bewildr/
         print_desktop_uia_element_name.rb
     powershell/
-      http://uiautomation.codeplex.com/
+      uiautomation.codeplex.com/
         printDesktopUiaElementName.ps1
 ````
 
