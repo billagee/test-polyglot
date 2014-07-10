@@ -8,7 +8,7 @@ Or: An adventure in TMTOWTDI.
 In this project, "polyglot" is used in the sense of a book
 containing the same text in several different languages.
 
-- Bill Agee ( http://www.likewise.org )
+- Bill Agee ( http://blog.likewise.org )
 
 ## Organization
 Files in this repository are organized as follows:
